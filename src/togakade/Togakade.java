@@ -23,6 +23,7 @@ public class Togakade {
         try {
             java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/companydb", "root","123456789");
             System.out.println(connection);
+            String sql = "SELECT * FROM employee";
         } catch (SQLException ex) {
             Logger.getLogger(Togakade.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println(ex);
