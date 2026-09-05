@@ -23,20 +23,20 @@ public class Togakade {
      */
     public static void main(String[] args) {
         try {
-            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/companydb", "root","123456789");
+            java.sql.Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/companydb", "root", "123456789");
             System.out.println(connection);
             String sql = "SELECT * FROM employee";
             Statement stm = connection.createStatement();
             ResultSet resultset = stm.executeQuery(sql);
             System.out.println(resultset);
             boolean next = resultset.next();
-            while(resultset.next()){
-            String name = resultset.getString(2);
-            String dec = resultset.getString(3);
-            double salary = resultset.getDouble(4);
-            System.out.println(name+":"+dec+"| Salary :"+salary);
+            while (resultset.next()) {
+                String name = resultset.getString(2);
+                String dec = resultset.getString(3);
+                double salary = resultset.getDouble(4);
+                System.out.println(name + ":" + dec + "| Salary :" + salary);
             }
-            
+
 //            while(resultset.next()){
 //            
 //            }
